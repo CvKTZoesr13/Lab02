@@ -1,0 +1,35 @@
+﻿@model Lab02.Models.Employee
+
+@{
+    ViewBag.Title = "Input";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Input</h2>
+
+@using (Html.BeginForm("CalSalaryV4", "EmployeeManagement"))
+{
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>@Html.TextBoxFor(model => model.id)</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>@Html.TextBoxFor(model => model.name)</td>
+        </tr>
+        <tr>
+            <td>Amount</td>
+            <td>@Html.TextBoxFor(model => model.amount)</td>
+        </tr>
+        <tr>
+            <td>Salary</td>
+            <td>@Html.TextBoxFor(model => model.salary)</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" name="sb" value="Send to server" />
+            </td>
+        </tr>
+    </table>
+}

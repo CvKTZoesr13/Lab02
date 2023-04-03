@@ -1,0 +1,146 @@
+﻿@model Lab02.Models.Staff
+
+@{
+    ViewBag.Title = "Input";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    .mw-8 {
+        min-width: 400px;
+        max-width: 800px;
+    }
+
+    .mh-34 {
+        min-height: 34px;
+    }
+
+    .w-100 {
+        width: 100%;
+    }
+
+    .input-group .form-control:last-child, .input-group-addon:last-child,
+    .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group > .btn,
+    .input-group-btn:last-child > .dropdown-toggle, .input-group-btn:first-child > .btn:not(:first-child),
+    .input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+        border-radius: .375rem;
+    }
+
+    input, select, textarea {
+        max-width: none;
+    }
+
+    .form-control {
+        box-shadow: none;
+    }
+
+        .form-control:focus {
+            color: #212529;
+            background-color: #fff;
+            border-color: #86b7fe;
+            outline: 0;
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        }
+</style>
+<h2>Input</h2>
+<form method="post" action="Output">
+    <div class="container-fluid">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" colspan="2" class="text-center">Nhập nhân viên</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Mã nhân viên</th>
+                    <td>
+                        <div class="input-group">
+                            <input type="text" name="Id" class="form-control mw-8" placeholder="Employee ID..." aria-label="EmployeeId">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Bậc lương</th>
+                    <td>
+                        <div class="input-group">
+                            <input type="text" name="SalaryLevel" class="form-control mw-8" placeholder="Salary Level..." aria-label="Fullname">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Ngày công</th>
+                    <td>
+                        <div class="input-group">
+                            <input type="text" name="Amount" class="form-control mw-8" placeholder="Amount..." aria-label="">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Chức vụ</th>
+                    <td>
+                        <select class="form-select mh-34 mw-8" name="Position" aria-label="">
+                            <option selected>Vui lòng chọn...</option>
+                            <option value="1">Trưởng phòng</option>
+                            <option value="2">Phó phòng</option>
+                            <option value="3">Trưởng nhóm</option>
+                            <option value="4">Giám đốc</option>
+                            <option value="5">Nhân viên</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Giới tính</th>
+                    <td>
+                        <div class="container-fluid row">
+                            <div class="form-check col-2">
+                                <input class="form-check-input" type="radio" name="Gender" value="Nam" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Nam
+                                </label>
+                            </div>
+                            <div class="form-check col-2">
+                                <input class="form-check-input" type="radio" name="Gender" value="Nữ" id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Nữ
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Ngoại ngữ</th>
+                    <td>
+                        <div class="container-fluid row">
+                            <div class="form-check col-2">
+                                <input class="form-check-input" name="Languages" type="checkbox" value="Anh" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Anh
+                                </label>
+                            </div>
+                            <div class="form-check col-2">
+                                <input class="form-check-input" name="Languages" type="checkbox" value="Pháp" id="flexCheckChecked">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Pháp
+                                </label>
+                            </div>
+                            <div class="form-check col-2">
+                                <input class="form-check-input" name="Languages" type="checkbox" value="Nga" id="flexCheck">
+                                <label class="form-check-label" for="flexCheck">
+                                    Nga
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="col text-end">
+            <button type="submit" class="btn btn-primary me-3">Calculate</button>
+            <button type="button" class="btn btn-danger">
+                @Html.ActionLink("Delete", "Input", "Salary", null, new { style = "color: white" })
+            </button>
+        </div>
+
+    </div>
+</form>
+

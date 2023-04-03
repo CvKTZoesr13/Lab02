@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "Input";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Input</h2>
+
+<style type="text/css">
+    .mw-8 {
+        min-width: 400px;
+        max-width:800px;
+    }
+    .mh-34 {
+        min-height: 34px;
+    }
+    .w-100 {
+        width: 100%;
+    }
+    .input-group .form-control:last-child, .input-group-addon:last-child,
+    .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group > .btn,
+    .input-group-btn:last-child > .dropdown-toggle, .input-group-btn:first-child > .btn:not(:first-child),
+    .input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+        border-radius: .375rem;
+    }
+    input, select, textarea {
+        max-width: none;
+    }
+    .form-control {
+        box-shadow: none;
+    }
+    .form-control:focus {
+            color: #212529;
+            background-color: #fff;
+            border-color: #86b7fe;
+            outline: 0;
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    }
+</style>
+<form action="Output" method="post">
+    <div class="container-fluid">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" colspan="3" class="text-center">Nhập điểm thi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Họ tên thí sinh</th>
+                    <td>
+                        <div class="input-group mw-8">
+                            <input type="text" class="form-control w-100" name="fullname" placeholder="Họ và tên..." aria-label="EmployeeId">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="container-fluid row">
+                            <div class="form-check col-2">
+                                @Html.CheckBox("checkbox")
+                                <label class="form-check-label" for="checkbox">
+                                    Gia đình chính sách
+                                </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Chọn khu vực</th>
+                    <td colspan="2">
+                        <select class="form-select mh-34 mw-8" name="area" aria-label="">
+                            <option selected>Vui lòng chọn...</option>
+                            <option value="1">Khu vực A</option>
+                            <option value="2">Khu vực B</option>
+                            <option value="3">Khu vực C</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Điểm Toán</th>
+                    <td colspan="2">
+                        <div class="input-group">
+                            <input name="math" type="text" class="form-control" placeholder="Điểm Toán..." aria-label="dateOfBirth">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Điểm Lý</th>
+                    <td colspan="2">
+                        <div class="input-group">
+                            <input name="physic" type="text" class="form-control" placeholder="Điểm Lý..." aria-label="dateOfBirth">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Điểm Hóa</th>
+                    <td colspan="2">
+                        <div class="input-group">
+                            <input name="chemistry" type="text" class="form-control" placeholder="Điểm Hóa..." aria-label="dateOfBirth">
+                        </div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <div class="col text-end">
+            <button type="submit" class="btn btn-primary me-3">Calculate</button>
+        </div>
+
+    </div>
+</form>

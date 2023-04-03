@@ -1,0 +1,55 @@
+﻿@model Lab02.Models.Staff
+
+@{
+    ViewBag.Title = "Output";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Output</h2>
+
+<div>
+    <table class="table table-bordered table-striped" >
+        <thead>
+            <tr>
+                <th scope="col" colspan="2" class="text-center">Tiền Lương</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Mã nhân viên</th>
+                <td>
+                    <div class="input-group">
+                        <input type="text" name="Id" class="form-control mw-8" readonly placeholder="Employee ID..." aria-label="EmployeeId" value="@Html.DisplayFor(model => model.Id)">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Bậc lương</th>
+                <td>
+                    <div class="input-group">
+                        <input type="text" name="SalaryLevel" class="form-control mw-8" readonly placeholder="Salary Level..." aria-label="SalaryLevel" value="@Html.DisplayFor(model => model.SalaryLevel)")>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Ngày công</th>
+                <td>
+                    <div class="input-group">
+                        <input type="text" name="Amount" class="form-control mw-8" readonly placeholder="Amount..." aria-label="" value="@Html.DisplayFor(model => model.Amount)">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Tiền lĩnh</th>
+                <td>
+                    <div class="input-group">
+                        <input type="text" name="TotalSalary" class="form-control mw-8" readonly placeholder="Total..." aria-label="" value="@Html.DisplayFor(model => model.TotalSalary)">
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Input")
+</p>

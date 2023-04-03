@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "CalSalaryV1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    ul > li {
+        list-style: none;
+    }
+</style>
+
+<div>
+    <h2>Calculate Salary V1</h2>
+    <ul>
+        <li>Id: @Model.id</li>
+        <li>Name: @Model.name</li>
+        <li>Amount: @Model.amount</li>
+        <li>Salary: @Model.salary</li>
+        <li>Bonus: @Model.bonus</li>
+        <li>Total: @Model.total</li>
+    </ul>
+</div>

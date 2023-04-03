@@ -1,0 +1,23 @@
+﻿@model Lab02.Models.KhoaHoc
+@{
+    ViewBag.Title = "DetailsKhoaHoc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DetailsKhoaHoc</h2>
+<h2>@ViewBag.Message</h2>
+<div>
+    <h4>KhoaHoc</h4>
+    <h4>@Model.MonHoc.name</h4>
+    @foreach(var item in Model.list)
+            {
+                <div>@item.name</div>
+            }
+    <hr />
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
